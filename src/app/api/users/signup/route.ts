@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   try {
     const { username, email, password } = await req.json();
 
-    if (!username || !password || !email === undefined) {
+    if (!username || !password || !email) {
       return NextResponse.json(
         { msg: "All fileds are required" },
         { status: 400 }
